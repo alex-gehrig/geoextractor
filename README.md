@@ -9,3 +9,6 @@ Create a new folder, throw in all the "whois"-files and add the script also.
 Then open the Terminal, navigate to that folder and start the script using "python3 geoextractor.py". The result will be afile named "countries.csv".
 
 This file contains two columns: the number of occurance and the abbreviation of the country. The list is sorted bey the number of the occurence of the country-code in descending order. In the last line you see the total.
+
+# Hint
+The script processes only those files, whose filenames match the pattern "whois*.txt"
