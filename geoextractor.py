@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import glob
+import csv
 
 """Grab the country-codes out of already existing txt-files which
 contain the results of 'whois' and write them in a csv-file ordered
@@ -45,7 +46,9 @@ hitlist.sort(reverse=True)
 # write results in a csv-file
 target = open("countries.csv", "w")
 for item in hitlist:
-    target.write(str(item[0]) + ";" + item[1] + "\n")
+    csv.writer(target).writerow(item)
 
-target.write(str(len(country_list)) + ";Total")
+last_row = [len(country_list), "Total"]
+csv.writer(target).writerow(last_row)
 
+target.close() # close the target-file when work is done
