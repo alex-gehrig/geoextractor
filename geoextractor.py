@@ -21,11 +21,12 @@ for file in glob.glob('whois*.txt'):
             # we want only the lines starting with "country:"
             if line.startswith('country:') or line.startswith('Country:'):
                 country_list.append(line)
+                break
 
 #defining an empty dictionary for counting the country-codes
 lst = {}
 
-# looping through the list, splitting them and exctracting only the country-code
+# looping through the list, splitting the elements and exctracting only the country-code
 for item in country_list:
     pieces = item.strip().split(":")
     c_code = pieces[1].strip()
